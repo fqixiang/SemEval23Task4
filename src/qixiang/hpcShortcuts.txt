@@ -1,0 +1,11 @@
+/home/uu_cs_nlpsoc/qfang/projects/proj_semeval23_task4/code/
+/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/
+
+best level1 model: /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/terLevel1Results/checkpoint-2717
+
+best level 2: checkpoint-1470 (score: 0.3155996799468994).
+best level 1: checkpoint-2717 (score: 0.22273343801498413).
+best level 0: checkpoint-10791 (score: 0.9223461747169495).
+
+
+paraphrase (with hedonism): checkpoint-780 (score: 0.3514950921947254)

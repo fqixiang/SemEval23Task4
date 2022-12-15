@@ -1,0 +1,26 @@
+# count = train['essay'].str.split().apply(len).value_counts
+# print(count)
+
+max_len = 0
+for i in range(len(testLabels)):
+    new_len = testDataset[i]['attention_mask'].sum()
+    if max_len < new_len:
+        max_len = new_len
+
+print(max_len)
+
+predsDf = pd.DataFrame({"Argument ID": testDf['Argument ID'],
+                        "Value": testDf['Level2 Hypothesis'],
+                        "Entailment": preds})
+predsDf = pd.pivot(predsDf, index="Argument ID", columns="Value", values="Entailment")
+predsDf= predsDf.reset_index()
+
+
+
+
+    # trainer.save_model("bertLevel2")
+
+    # model = AutoModelForSequenceClassification.from_pretrained("bertLevel2",
+    #                                                             num_labels=2)
+    # trainer = Trainer(model=model,
+    #                   args=training_args)

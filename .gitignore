@@ -1,7 +1,21 @@
 # exclude compiled binaries and external models
 /bin
 
-# exclude data from source control by default
-/data/temp
-/data/processed
-/data/raw
+# exclude (cache) data
+src/qixiang/.vector_cache/
+src/qixiang/__pycache__/
+src/qixiang/results/
+src/qixiang/terLevel0Results
+src/qixiang/terLevel1Results
+src/qixiang/terLevel2Results
+
+# exclude other
+.idea/
+.Rhistory
+
+# exclude uploading irrelevant data
+data/pan15
+data/wassa2022
+data/webis-argvalues-22
+data/csicorpus.zip
+data/twisty.zip
