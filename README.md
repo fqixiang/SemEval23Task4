@@ -1,4 +1,4 @@
-# [PROJECT NAME]
+# Identification of Human Values behind Arguments
 
 ## Project organization
 - PG = project-generated
