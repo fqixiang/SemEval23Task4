@@ -1,67 +1,75 @@
 import pandas as pd
 from torch.utils.data import Dataset
 import torch
+import numpy as np
 
-def readSemEvalData(longFormat=True):
-    # import arguments and labels
-    argumentsDf = pd.read_csv('../../data/raw/touche23/arguments-training.tsv', sep='\t')
-
-    # level 2 labels
-    level2LabelsDf = pd.read_csv('../../data/raw/touche23/labels-training.tsv', sep='\t')
-
-    # level 1 labels
-    level1LabelsDf = pd.read_csv('../../data/raw/touche23/level1-labels-training.tsv', sep='\t')
+pd.set_option('display.max_rows', 10)
+pd.set_option('display.max_columns', 10)
+pd.set_option('display.width', 0)
 
 
-    if longFormat:
-        level2Values = list(level2LabelsDf.columns)[1:]
-        level2LabelsDf = pd.melt(level2LabelsDf, id_vars="Argument ID", value_vars=level2Values,
-                                 var_name='Level2 Hypothesis', value_name="Entailment")
-        level1Values = list(level1LabelsDf.columns)[1:]
-        level1LabelsDf = pd.melt(level1LabelsDf, id_vars="Argument ID", value_vars=level1Values,
-                                 var_name='Level1 Hypothesis', value_name="Entailment")
+def read_train_and_val_data(long_format=True):
+    arguments_train_df = pd.read_csv('../../data/raw/touche23/arguments-training.tsv', sep='\t')
+    arguments_val_df = pd.read_csv('../../data/raw/touche23/arguments-validation.tsv', sep='\t')
+    level2_labels_train_df = pd.read_csv('../../data/raw/touche23/labels-training.tsv', sep='\t')
+    level2_labels_val_df = pd.read_csv('../../data/raw/touche23/labels-validation.tsv', sep='\t')
 
-    return argumentsDf, level2LabelsDf, level1LabelsDf
+    if long_format:
+        level2_values = list(level2_labels_train_df.columns)[1:]
+        level2_labels_train_df = pd.melt(level2_labels_train_df, id_vars="Argument ID", value_vars=level2_values,
+                                         var_name='Level2_Value', value_name="Entailment")
+        level2_labels_val_df = pd.melt(level2_labels_val_df, id_vars="Argument ID", value_vars=level2_values,
+                                       var_name='Level2_Value', value_name="Entailment")
 
-def convertSemEvalDataToTerFormat(arguments, labels, level):
-    #for the arguments df, we need only id and premises
+    return arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df
+
+
+def read_test_data(long_format=True):
+    arguments_test_df = pd.read_csv('../../data/raw/touche23/arguments-test.tsv', sep='\t')
+    level2_values = pd.read_csv('../../data/raw/touche23/labels-validation.tsv', sep='\t').columns[1:]
+    level2_labels_test_df = arguments_test_df[["Argument ID"]]
+    for value in level2_values:
+        level2_labels_test_df[value] = 0
+
+    if long_format:
+        level2_values = list(level2_labels_test_df.columns)[1:]
+        level2_labels_test_df = pd.melt(level2_labels_test_df, id_vars="Argument ID", value_vars=level2_values,
+                                        var_name='Level2_Value', value_name="Entailment")
+
+    return arguments_test_df, level2_labels_test_df
+
+
+def convert_data_to_nli_format(arguments, labels, definition=None):
     arguments = arguments[["Argument ID", "Premise"]]
-
     df = pd.merge(arguments, labels, how="left", on="Argument ID")
 
-    if level == "2":
-        df.rename(columns={'Level2 Hypothesis': 'Hypothesis'}, inplace=True)
+    if definition is None:
+        return df
 
-    if level == "1":
-        df.rename(columns={'Level1 Hypothesis': 'Hypothesis'}, inplace=True)
+    if definition == "description":
+        definition_df = pd.read_csv('../../data/raw/SemEval_ValueDescription.tsv', sep='\t')
+        definition_df = definition_df[["Level2_Value", "Hypothesis"]]
 
-    if level == "0":
-        dictionaryDfLevel1 = pd.read_csv('../data/touche23/semEvalDictionary - level1.tsv', sep='\t')
-        dictionaryDfLevel0 = pd.read_csv('../data/touche23/semEvalDictionary - level0.tsv', sep='\t')
+    df = pd.merge(df, definition_df, how="left", on="Level2_Value")
+    return df
 
-        df = pd.merge(df, dictionaryDfLevel1, how="left", on="Level2 Hypothesis")
-        df = pd.merge(df, dictionaryDfLevel0, how="left", on=["Level1 ID", "Level1 Hypothesis"])
-        df.rename(columns={'Level0 Hypothesis': 'Hypothesis'}, inplace=True)
 
-    trainIds = pd.read_csv('../data/touche23/training-Christian.tsv', sep='\t')['Argument ID'].tolist()
-    testIds = pd.read_csv('../data/touche23/test-Christian.tsv', sep='\t')['Argument ID'].tolist()
-
-    trainDf = df.loc[df['Argument ID'].isin(trainIds)][['Argument ID', 'Premise', 'Hypothesis', 'Entailment']]
-    testDf = df.loc[df['Argument ID'].isin(testIds)][['Argument ID', 'Premise', 'Hypothesis', 'Entailment']]
-
-    return trainDf, testDf
-
-def tokenize_data(df, tokenizer):
+def tokenize_data(df, tokenizer, max_length=None):
     tuples = list(zip(df['Premise'], df['Hypothesis'], df['Entailment']))
-
-    inputData = []
+    input_data = []
     labels = []
     for (premise, hypothesis, label) in tuples:
-        inputData.append([premise.lower(), hypothesis.lower()])
+        input_data.append([premise.lower(), hypothesis.lower()])
         labels.append(label)
-    return tokenizer(inputData, max_length=180, padding='max_length'), torch.as_tensor(labels)
 
-class semEvalTerDataset(Dataset):
+    if max_length is None:
+        tokenized_data = tokenizer(input_data, padding=True, truncation=True)
+        return tokenized_data, torch.as_tensor(labels), np.array(tokenized_data['input_ids']).shape[1]
+    else:
+        return tokenizer(input_data, max_length=max_length, padding='max_length'), torch.as_tensor(labels)
+
+
+class MyDataset(Dataset):
     def __init__(self, encodings, labels):
         self.encodings = encodings
         self.labels = labels
