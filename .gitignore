@@ -1,7 +1,9 @@
 # exclude compiled binaries and external models
 /bin
 
-# exclude data from source control by default
-/data/temp
-/data/processed
-/data/raw
+# exclude saved models
+results/output/models
+
+# exclude other
+.idea/
+.Rhistory
