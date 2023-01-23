@@ -27,12 +27,9 @@ def main():
     modelPath = args.model_path
 
     # read test data
-    _, _, _, testDf = readSemEvalData()
-
-    # convert level 2 test data to TER format
-    level2TestDf = convertSemEvalDataToTerFormat(testDf, value_level="2", test=True)
-    # level2TestDf = level2TestDf.sample(500, random_state=1)
-    level2TestDf = level2TestDf.rename(columns={"Level2 Hypothesis": 'Hypothesis'})
+    argumentsDf, labelsDf, _, _ = readSemEvalData()
+    _, level2TestDf = convertSemEvalDataToTerFormat(argumentsDf, labelsDf, value_level="2")
+    print(level2TestDf)
 
     # load trained BERT
     outputDir = '../../results/output/prediction/terTrainedWithLevel' + level + 'Values'
@@ -68,7 +65,7 @@ def main():
         os.mkdir(outputDir)
 
     timestamp = time.strftime("%Y%m%d%H%M")
-    resultsName = outputDir + "/terPredictionWithLevel" + level + "Hypotheses" + timestamp + ".tsv"
+    resultsName = outputDir + "/terEvaluationWithLevel" + level + "Hypotheses" + timestamp + ".tsv"
     predictionDf.to_csv(resultsName, sep='\t')
 
 if __name__ == '__main__':
