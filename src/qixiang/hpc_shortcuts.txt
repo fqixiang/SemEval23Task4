@@ -1,0 +1,27 @@
+cd projects/proj_semeval23_task4/src/qixiang/
+/home/uu_cs_nlpsoc/qfang/projects/proj_semeval23_task4/src/qixiang
+/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/
+
+gpu nodes: TeslaV100, RTX6000
+
+- local, test mode:
+python .\train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --test_mode yes
+python .\train.py --batch_size 32 --gradient_step_size 4 --definition survey --weighted_loss 'not_weighted' --test_mode yes
+
+
+- hpc, test mode
+python train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --device hpc --test_mode yes
+
+- hpc, non-test mode
+
+
+
+
+
+- without weights, local, test mode on
+Best threshold value: 0
+Best f1 score is: 0.5343263102034059
+
+- with weights, local, test mode on
+Best threshold value: 0
+Best f1 score is: 0.5177568015973616

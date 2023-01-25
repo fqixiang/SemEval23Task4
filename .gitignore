@@ -4,6 +4,9 @@
 # exclude saved models
 results/output/models
 
+# exclude cached data
+src/qixiang/__pycache__/
+
 # exclude other
 .idea/
 .Rhistory
