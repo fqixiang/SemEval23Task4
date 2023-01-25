@@ -60,6 +60,8 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
     train_encodings, train_labels, max_length = tokenize_data(train, tokenizer, max_length=None)
     print("Tokenization of training data: complete.")
+    print("Maximum tokenization length is: " + str(max_length))
+
     val_encodings, val_labels = tokenize_data(val, tokenizer, max_length=max_length)
     print("Tokenization of validation data: complete.")
     test1_encodings, test1_labels = tokenize_data(test1, tokenizer, max_length=max_length)
@@ -79,17 +81,14 @@ def main():
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
 
-    def model_init():
-        return AutoModelForSequenceClassification.from_pretrained(output_dir+model_number,
-                                                                  num_labels=2)
-
+    model = AutoModelForSequenceClassification.from_pretrained(output_dir + "checkpoint-" + model_number,
+                                                               num_labels=2)
     training_args = TrainingArguments(
         output_dir=output_dir,          # output directory
-        seed=42,
-        data_seed=42
+        per_device_eval_batch_size=eval_batch_size,
     )
 
-    trainer = Trainer(model_init = model_init,
+    trainer = Trainer(model=model,
                       args=training_args)
 
     # make predictions on the validation set
@@ -116,8 +115,8 @@ def main():
                                    'Level2_Value': test2['Level2_Value'],
                                    'Prediction': preds_test2})
 
-    preds_test1.to_csv(output_dir+'test1_predictions_raw.tsv', index=False, header=True, sep='\t')
-    preds_test2.to_csv(output_dir + 'test2_predictions_raw.tsv', index=False, header=True, sep='\t')
+    preds_test1_df.to_csv(output_dir+'test1_predictions_raw.tsv', index=False, header=True, sep='\t')
+    preds_test2_df.to_csv(output_dir + 'test2_predictions_raw.tsv', index=False, header=True, sep='\t')
 
     # aggregate the predictions on the test set and save them to tsv
     aggregated_test1_preds_df = aggregate_test_predictions(preds_test1_df, threshold=thresholds[max_index])
@@ -125,6 +124,9 @@ def main():
 
     aggregated_test2_preds_df = aggregate_test_predictions(preds_test2_df, threshold=thresholds[max_index])
     aggregated_test2_preds_df.to_csv(output_dir+'test2_predictions_agg.tsv', header=True, index=True, sep='\t')
+
+    print("Best threshold value: " + str(thresholds[max_index]))
+    print("Best f1 score is: " + str(max(f1_across_thresholds)))
 
 if __name__ == '__main__':
     main()

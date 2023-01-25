@@ -7,13 +7,13 @@ gpu nodes: TeslaV100, RTX6000
 - local, test mode:
 python .\train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --test_mode yes
 python .\train.py --batch_size 32 --gradient_step_size 4 --definition survey --weighted_loss 'not_weighted' --test_mode yes
-
+python .\predict.py --definition survey --weighted_loss not_weighted --model_number 75 --test_mode yes
 
 - hpc, test mode
 python train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --device hpc --test_mode yes
 
 - hpc, non-test mode
-
+python .\predict.py --definition survey --weighted_loss not_weighted --model_number 27500 --device hpc --test_mode no
 
 
 
@@ -25,3 +25,11 @@ Best f1 score is: 0.5343263102034059
 - with weights, local, test mode on
 Best threshold value: 0
 Best f1 score is: 0.5177568015973616
+
+
+
+Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/description_not_weighted/checkpoint-27500 (score: 1.16591477394104).
+RuntimeError: stack expects each tensor to be equal size, but got [182] at entry 0 and [191] at entry 416
+
+
+Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/description_weighted/checkpoint-32500 (score: 1.81423819065094).

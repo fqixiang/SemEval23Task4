@@ -60,6 +60,15 @@ def convert_data_to_nli_format(arguments, labels, definition=None):
         definition_df = pd.read_csv('../../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
         definition_df = definition_df[["Level2_Value", "Hypothesis"]]
 
+    if definition == "both":
+        definition_df1 = pd.read_csv('../../data/raw/SemEval_ValueDescription.tsv', sep='\t')
+        definition_df1 = definition_df1[["Level2_Value", "Hypothesis"]]
+
+        definition_df2 = pd.read_csv('../../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
+        definition_df2 = definition_df2[["Level2_Value", "Hypothesis"]]
+
+        definition_df = pd.concat([definition_df1, definition_df2])
+
     df = pd.merge(df, definition_df, how="left", on="Level2_Value")
     return df
 
@@ -76,7 +85,7 @@ def tokenize_data(df, tokenizer, max_length=None):
         tokenized_data = tokenizer(input_data, padding=True, truncation=True)
         return tokenized_data, torch.as_tensor(labels), np.array(tokenized_data['input_ids']).shape[1]
     else:
-        return tokenizer(input_data, max_length=max_length, padding='max_length'), torch.as_tensor(labels)
+        return tokenizer(input_data, max_length=max_length, padding='max_length', truncation=True), torch.as_tensor(labels)
 
 
 class MyDataset(Dataset):

@@ -9,12 +9,12 @@ import torch
 # test = convert_data_to_nli_format(arguments_test, labels_test, definition="description")
 # print(test)
 
-# arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
-# train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition="description")
+arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
+train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition="both")
 # val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition="description")
-#
-# # print(level2_labels_val_df)
-#
+
+print(train)
+
 # #use samples
 # train = train.sample(n=1000, random_state=42)
 # argument_sample = arguments_val_df['Argument ID'].sample(n = 100, random_state=42).tolist()
@@ -61,10 +61,10 @@ import torch
 #                                                                                                  random_state=42,
 #                                                                                                  replace=True)
 # print(test)
-
-tensor = torch.tensor([0, 0, 0, 0, 0])
-print(tensor)
-tensor_counts = torch.bincount(tensor)
-tensor_weights = torch.flip(tensor_counts, [0])
-print(tensor_weights.float())
-print(tensor_counts.size(dim=0))
+#
+# tensor = torch.tensor([0, 0, 0, 0, 0])
+# print(tensor)
+# tensor_counts = torch.bincount(tensor)
+# tensor_weights = torch.flip(tensor_counts, [0])
+# print(tensor_weights.float())
+# print(tensor_counts.size(dim=0))
