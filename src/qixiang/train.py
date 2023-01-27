@@ -23,6 +23,9 @@ def main():
     parser.add_argument("--definition",
                         type=str,
                         default="description")
+    parser.add_argument("--paraphrases",
+                        type=str,
+                        default="no")
     parser.add_argument("--weighted_loss",
                         type=str,
                         default="not_weighted")
@@ -41,6 +44,7 @@ def main():
     test_mode = args.test_mode
     definition = args.definition
     weighted_loss = args.weighted_loss
+    paraphrases = args.paraphrases
 
     if batch_size is None:
         return
@@ -65,8 +69,8 @@ def main():
 
     # read training data
     arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
-    train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition=definition)
-    val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition=definition)
+    train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition=definition, paraphrases=paraphrases)
+    val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition=definition, paraphrases="no")
 
     # get a subsample of the training data for test run
     if test_mode == "yes":
@@ -94,9 +98,9 @@ def main():
 
     # # train BERT
     if device == "hpc":
-        output_dir = '/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/' + definition + '_' + weighted_loss + '/'
+        output_dir = '/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
     else:
-        output_dir = '../../results/output/models/' + definition + '_' + weighted_loss + '/'
+        output_dir = '../../results/output/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)

@@ -17,6 +17,9 @@ def main():
     parser.add_argument("--device",
                         type=str,
                         default=None)
+    parser.add_argument("--paraphrases",
+                        type=str,
+                        default="no")
     parser.add_argument("--model_number",
                         type=str,
                         default=None)
@@ -31,13 +34,14 @@ def main():
     test_mode = args.test_mode
     weighted_loss = args.weighted_loss
     device = args.device
+    paraphrases = args.paraphrases
 
     # read train, val and test data
     arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
     arguments_test1_df, labels_test1_df = read_test_data(which="test")
     arguments_test2_df, labels_test2_df = read_test_data(which="nahjalbalagha")
 
-    train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition=definition)
+    train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition=definition, paraphrases=paraphrases)
     val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition=definition)
     test1 = convert_data_to_nli_format(arguments_test1_df, labels_test1_df, definition=definition)
     test2 = convert_data_to_nli_format(arguments_test2_df, labels_test2_df, definition=definition)
@@ -74,9 +78,9 @@ def main():
 
     # load trained BERT
     if device == "hpc":
-        output_dir = '/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/' + definition + '_' + weighted_loss + '/'
+        output_dir = '/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
     else:
-        output_dir = '../../results/output/models/' + definition + '_' + weighted_loss + '/'
+        output_dir = '../../results/output/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
@@ -103,6 +107,8 @@ def main():
     f1_across_thresholds = [evaluate_val_predictions(preds_val_df, level2_labels_val_df, threshold) for threshold in
                             thresholds]
     max_index = f1_across_thresholds.index(max(f1_across_thresholds))
+    print("Best threshold value: " + str(thresholds[max_index]))
+    print("Best f1 score is: " + str(max(f1_across_thresholds)))
 
     # make predictions on the test set
     preds_test1 = np.argmax(trainer.predict(test1_dataset)[0], axis=1)

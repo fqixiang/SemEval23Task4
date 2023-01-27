@@ -3,8 +3,9 @@ from torch.utils.data import Dataset
 import torch
 import numpy as np
 from sklearn.metrics import classification_report
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5Tokenizer, T5ForConditionalGeneration
 
-pd.set_option('display.max_rows', 10)
+pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 10)
 pd.set_option('display.width', 0)
 
@@ -45,8 +46,13 @@ def read_test_data(which="test", long_format=True):
     return arguments_test_df, level2_labels_test_df
 
 
-def convert_data_to_nli_format(arguments, labels, definition=None):
+def convert_data_to_nli_format(arguments, labels, definition=None, paraphrases="no"):
     arguments = arguments[["Argument ID", "Premise"]]
+
+    if paraphrases == "yes":
+        paraphrases_df = pd.read_csv('../../data/raw/paraphrases.tsv', sep='\t')
+        arguments = pd.concat([arguments, paraphrases_df])
+
     df = pd.merge(arguments, labels, how="left", on="Argument ID")
 
     if definition is None:
@@ -135,3 +141,42 @@ def aggregate_test_predictions(test_predictions_df, threshold):
 
     preds_df_wide = preds_df.pivot(index='Argument ID', columns='Level2_Value', values='Prediction')
     return(preds_df_wide)
+
+def t5_vamsi_paraphraser(arguments_df, argument_ids): #do this only for the train set
+    # values for which to be paraphrased: Stimulation, Hedonism, Power: dominance, Face, Conformity: interpersonal, Humility
+    tokenizer = AutoTokenizer.from_pretrained("Vamsi/T5_Paraphrase_Paws")
+    model = AutoModelForSeq2SeqLM.from_pretrained("Vamsi/T5_Paraphrase_Paws")
+
+    arguments = arguments_df.loc[arguments_df['Argument ID'].isin(argument_ids)]['Premise'].tolist()
+    # print(arguments)
+    paraphrase_ls = []
+    for argument in arguments:
+        inputs = tokenizer.encode_plus("paraphrase: " + argument + " </s>",
+                                        pad_to_max_length=True,
+                                        return_tensors="pt")
+
+        outputs = model.generate(input_ids=inputs["input_ids"],
+                                 attention_mask=inputs["attention_mask"],
+                                 max_length=256,
+                                 do_sample=True,
+                                 top_k=120,
+                                 top_p=0.75,
+                                 early_stopping=True,
+                                 num_return_sequences=3)
+
+        paraphrases = tokenizer.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenization_spaces=True)
+        paraphrase_ls = paraphrase_ls + paraphrases
+
+    paraphrases_df = pd.DataFrame({"Argument ID": np.repeat(argument_ids, 3),
+                                   "Premise": paraphrase_ls})
+    paraphrases_df.to_csv('../../data/raw/paraphrases.tsv', sep='\t', index=False)
+
+# def t5_paraphraser(arguments_df, argument_ids): #do this only for the train set
+#     # values for which to be paraphrased: Stimulation, Hedonism, Power: dominance, Face, Conformity: interpersonal, Humility
+#     tokenizer = T5Tokenizer.from_pretrained("t5-small")
+#     model = T5ForConditionalGeneration.from_pretrained("t5-small")
+#
+#     arguments = arguments_df.loc[arguments_df['Argument ID'].isin(argument_ids)]['Premise'].tolist()
+#     print(arguments)
+#
+#     print(tokenizer.batch_decode(outputs, skip_special_tokens=True, clean_up_tokenization_spaces=True))

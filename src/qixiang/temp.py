@@ -1,4 +1,5 @@
-from utils import read_train_and_val_data, convert_data_to_nli_format, tokenize_data, MyDataset, read_test_data, evaluate_val_predictions, aggregate_predictions, aggregate_test_predictions
+from utils import read_train_and_val_data, convert_data_to_nli_format, tokenize_data, MyDataset, read_test_data, \
+    evaluate_val_predictions, aggregate_predictions, aggregate_test_predictions
 from transformers import AutoTokenizer
 import numpy as np
 import pandas as pd
@@ -9,11 +10,11 @@ import torch
 # test = convert_data_to_nli_format(arguments_test, labels_test, definition="description")
 # print(test)
 
-arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
-train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition="both")
-# val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition="description")
-
-print(train)
+# arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
+# train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition="both")
+# # val = convert_data_to_nli_format(arguments_val_df, level2_labels_val_df, definition="description")
+#
+# print(train)
 
 # #use samples
 # train = train.sample(n=1000, random_state=42)
@@ -68,3 +69,27 @@ print(train)
 # tensor_weights = torch.flip(tensor_counts, [0])
 # print(tensor_weights.float())
 # print(tensor_counts.size(dim=0))
+
+# t5_paraphraser(["how are you", "how's the weather"])
+
+# check the distribution of values
+# arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
+# print(arguments_train_df)
+# print(level2_labels_train_df)
+# print(level2_labels_train_df.groupby('Level2_Value')['Entailment'].sum())
+# print(level2_labels_train_df['Entailment'].sum())
+# print(level2_labels_train_df['Level2_Value'].value_counts())
+
+# values = ['Stimulation', 'Hedonism', 'Power: dominance', 'Face', 'Conformity: interpersonal', 'Humility']
+# # values.insert(0, 'hi')
+# # print(values)
+# arguments_train_df, _, level2_labels_train_df, _ = read_train_and_val_data(long_format=False)
+# print(level2_labels_train_df)
+# index = (level2_labels_train_df[values].sum(axis=1)) > 0
+# print(index)
+# print(arguments_train_df.loc[index])
+
+arguments_train_df, arguments_val_df, level2_labels_train_df, level2_labels_val_df = read_train_and_val_data()
+train = convert_data_to_nli_format(arguments_train_df, level2_labels_train_df, definition="description",
+                                   paraphrases="yes")
+print(train)

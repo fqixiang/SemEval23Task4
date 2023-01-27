@@ -1,13 +1,13 @@
 cd projects/proj_semeval23_task4/src/qixiang/
 /home/uu_cs_nlpsoc/qfang/projects/proj_semeval23_task4/src/qixiang
-/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/
+/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models
 
 gpu nodes: TeslaV100, RTX6000
 
 - local, test mode:
-python .\train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --test_mode yes
+python .\train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'weighted' --paraphrases yes --test_mode yes
 python .\train.py --batch_size 32 --gradient_step_size 4 --definition survey --weighted_loss 'not_weighted' --test_mode yes
-python .\predict.py --definition survey --weighted_loss not_weighted --model_number 75 --test_mode yes
+python .\predict.py --definition description --weighted_loss weighted --model_number 75 --paraphrases yes --test_mode yes
 
 - hpc, test mode
 python train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --device hpc --test_mode yes
@@ -26,10 +26,41 @@ Best f1 score is: 0.5343263102034059
 Best threshold value: 0
 Best f1 score is: 0.5177568015973616
 
+# with weights, hpc, descriptions
+Best threshold value: 0
+Best f1 score is: 0.44115929900628625
 
+# no weights, hpc, descriptions
+Best threshold value: 0
+Best f1 score is: 0.43239305220057184
 
 Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/description_not_weighted/checkpoint-27500 (score: 1.16591477394104).
 RuntimeError: stack expects each tensor to be equal size, but got [182] at entry 0 and [191] at entry 416
 
 
 Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/description_weighted/checkpoint-32500 (score: 1.81423819065094).
+
+pip install --force-reinstall -v "protobuf==3.20"
+
+
+Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/survey_not_weighted/checkpoint-32500 (score: 1.126828908920288)
+Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/survey_weighted/checkpoint-30000 (score: 1.6345998048782349)
+
+
+
+
+# weighted, survey, hpc, no para
+Best threshold value: 0.3
+Best f1 score is: 0.43448506763487577
+
+# unweighted, survey, hpc, no para
+Best threshold value: 0.3
+Best f1 score is: 0.4230834329955761
+
+# weighted, description, hpc, no para
+Best threshold value: 0
+Best f1 score is: 0.44115929900628625
+
+# unweighted, description, hpc, no para
+Best threshold value: 0
+Best f1 score is: 0.43239305220057184
