@@ -45,7 +45,7 @@ pip install --force-reinstall -v "protobuf==3.20"
 
 Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/survey_not_weighted/checkpoint-32500 (score: 1.126828908920288)
 Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/survey_weighted/checkpoint-30000 (score: 1.6345998048782349)
-
+Loading best model from /hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/description_weighted_yes/checkpoint-57500 (score: 1.7060327529907227).
 
 
 
