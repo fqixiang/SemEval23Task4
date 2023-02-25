@@ -1,6 +1,7 @@
 # exclude compiled binaries and external models
 /bin
 /.idea
+/config
 
 # exclude saved models
 results/output/models

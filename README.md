@@ -1,33 +1,37 @@
-# Identification of Human Values behind Arguments
+# Epicurus at SemEval-2023 Task 4
 
-## Project organization
-- PG = project-generated
-- HW = human-writable
-- RO = read only
+## Project description
+This repository is created for reproducing the approach and results 
+in the following paper: 
+[Epicurus at SemEval-2023 Task 4: Improving Prediction of Human Values from Arguments by Leveraging Their Definitions](insert url).
+
+## Set up environment
 ```
-.
-├── .gitignore
-├── CITATION.md
-├── LICENSE.md
-├── README.md
-├── requirements.txt
-├── bin                <- Compiled and external code, ignored by git (PG)
-│   └── external       <- Any external source code, ignored by git (RO)
-├── config             <- Configuration files (HW)
-├── data               <- All project data, ignored by git
-│   ├── processed      <- The final, canonical data sets for modeling. (PG)
-│   ├── raw            <- The original, immutable data dump. (RO)
-│   └── temp           <- Intermediate data that has been transformed. (PG)
-├── docs               <- Documentation notebook for users (HW)
-│   ├── manuscript     <- Manuscript source, e.g., LaTeX, Markdown, etc. (HW)
-│   └── reports        <- Other project reports and notebooks (e.g. Jupyter, .Rmd) (HW)
-├── results
-│   ├── figures        <- Figures for the manuscript or reports (PG)
-│   └── output         <- Other output for the manuscript or reports (PG)
-└── src                <- Source code for this project (HW)
-
+conda create --name epicurus python=3.10 pip
+conda activate epicurus
+pip install -r requirements.txt
 ```
 
+## Download data 
+Please download the challenge data from [this link](https://zenodo.org/record/7550385#.Y_kO--zMJqs) to the folder ./data/raw/touche23
+
+## Model training
+```
+cd ./src
+python train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'weighted' --test_mode no
+python train.py --batch_size 32 --gradient_step_size 4 --definition description --weighted_loss 'not_weighted' --test_mode no
+python train.py --batch_size 32 --gradient_step_size 4 --definition survey --weighted_loss 'weighted' --test_mode no
+python train.py --batch_size 32 --gradient_step_size 4 --definition survey --weighted_loss 'not_weighted' --test_mode no
+```
+
+
+## Get predictions
+```
+python predict.py --definition description --weighted_loss weighted --model_number [insert here] --test_mode no
+python predict.py --definition description --weighted_loss not_weighted --model_number [insert here] --test_mode no
+python predict.py --definition survey --weighted_loss weighted --model_number [insert here] --test_mode no
+python predict.py --definition survey --weighted_loss not_weighted --model_number [insert here] --test_mode no
+```
 
 ## License
 
