@@ -1,16 +1,16 @@
 # exclude compiled binaries and external models
 /bin
 /.idea
-/config
+/config/
 
 # exclude saved models
-results/output/models
-results/submission
-results/figures
+results/output/models/
+results/submission/
+results/figures/
 
 # exclude irrelevant code files
-src/annotationAnalysis
-src/archive
+src/annotationAnalysis/
+src/archive/
 src/hpc_shortcuts.txt
 src/temp.py
 
@@ -18,7 +18,7 @@ src/temp.py
 src/qixiang/__pycache__/
 
 # exclude reannotations
-data/processed
+data/processed/
 
 # exclude challenge data
 data/raw/touche23/
