@@ -3,7 +3,7 @@
 ## Project description
 This repository is created for reproducing the approach and results 
 in the following paper: 
-[Epicurus at SemEval-2023 Task 4: Improving Prediction of Human Values from Arguments by Leveraging Their Definitions](insert url).
+Epicurus at SemEval-2023 Task 4: Improving Prediction of Human Values from Arguments by Leveraging Their Definitions.
 
 ## Set up environment
 ```
