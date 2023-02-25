@@ -82,8 +82,8 @@ def main():
     else:
         eval_batch_size = 1024
 
-    # print(train)
-    # print(val)
+    print(train)
+    print(val)
     print("Train and test sets created.")
 
     # tokenize the datasets and prepare the data in Dataset class
@@ -169,32 +169,31 @@ def main():
                             thresholds]
     max_index = f1_across_thresholds.index(max(f1_across_thresholds))
 
-    # make predictions on the test set
-    arguments_test_df, labels_test_df = read_test_data(which="test")
-    test = convert_data_to_nli_format(arguments_test_df, labels_test_df, definition=definition)
-
-    if test_mode == "yes":
-        test_argument_sample = arguments_test_df['Argument ID'].sample(n = 100, random_state=42).tolist()
-        test = test.loc[test['Argument ID'].isin(test_argument_sample)].groupby(['Level2_Value']).sample(n=100, random_state=42, replace=True)
-
-    test_encodings, test_labels = tokenize_data(test, tokenizer, max_length=max_length)
-    print("Tokenization of test data: complete.")
-
-    test_dataset = MyDataset(test_encodings, test_labels)
-    preds_test = np.argmax(trainer.predict(test_dataset)[0], axis=1)
-    preds_test_df = pd.DataFrame({'Argument ID': test['Argument ID'],
-                                  'Level2_Value': test['Level2_Value'],
-                                  'Prediction': preds_test})
-
-    preds_test_df.to_csv(output_dir+'test_predictions_raw.tsv', index=False, header=True, sep='\t')
-
-    # aggregate the predictions on the test set and save them to tsv
-    aggregated_test_preds_df = aggregate_test_predictions(preds_test_df, threshold=thresholds[max_index])
-    aggregated_test_preds_df.to_csv(output_dir+'test_predictions_agg.tsv', header=True, index=True, sep='\t')
-
     print("Best threshold value: " + str(thresholds[max_index]))
     print("Best f1 score is: " + str(max(f1_across_thresholds)))
 
+    # # make predictions on the test set
+    # arguments_test_df, labels_test_df = read_test_data(which="test")
+    # test = convert_data_to_nli_format(arguments_test_df, labels_test_df, definition=definition)
+    #
+    # if test_mode == "yes":
+    #     test_argument_sample = arguments_test_df['Argument ID'].sample(n = 100, random_state=42).tolist()
+    #     test = test.loc[test['Argument ID'].isin(test_argument_sample)].groupby(['Level2_Value']).sample(n=100, random_state=42, replace=True)
+    #
+    # test_encodings, test_labels = tokenize_data(test, tokenizer, max_length=max_length)
+    # print("Tokenization of test data: complete.")
+    #
+    # test_dataset = MyDataset(test_encodings, test_labels)
+    # preds_test = np.argmax(trainer.predict(test_dataset)[0], axis=1)
+    # preds_test_df = pd.DataFrame({'Argument ID': test['Argument ID'],
+    #                               'Level2_Value': test['Level2_Value'],
+    #                               'Prediction': preds_test})
+    #
+    # preds_test_df.to_csv(output_dir+'test_predictions_raw.tsv', index=False, header=True, sep='\t')
+    #
+    # # aggregate the predictions on the test set and save them to tsv
+    # aggregated_test_preds_df = aggregate_test_predictions(preds_test_df, threshold=thresholds[max_index])
+    # aggregated_test_preds_df.to_csv(output_dir+'test_predictions_agg.tsv', header=True, index=True, sep='\t')
 
 if __name__ == '__main__':
     main()

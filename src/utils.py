@@ -46,7 +46,7 @@ def read_test_data(which="test", long_format=True):
     return arguments_test_df, level2_labels_test_df
 
 
-def convert_data_to_nli_format(arguments, labels, definition=None, paraphrases="no"):
+def convert_data_to_nli_format(arguments, labels, definition, paraphrases="no"):
     arguments = arguments[["Argument ID", "Premise"]]
 
     if paraphrases == "yes":
@@ -55,7 +55,8 @@ def convert_data_to_nli_format(arguments, labels, definition=None, paraphrases="
 
     df = pd.merge(arguments, labels, how="left", on="Argument ID")
 
-    if definition is None:
+    if definition == "none":
+        df['Hypothesis'] = df['Level2_Value']
         return df
 
     if definition == "description":
