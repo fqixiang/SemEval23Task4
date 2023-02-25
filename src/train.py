@@ -100,7 +100,7 @@ def main():
     if device == "hpc":
         output_dir = '/hpc/uu_cs_nlpsoc/data/qixiang/proj_semeval23_task4/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
     else:
-        output_dir = '../../results/output/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
+        output_dir = '../results/output/models/' + definition + '_' + weighted_loss + '_' + paraphrases + '/'
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)

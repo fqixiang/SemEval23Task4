@@ -11,10 +11,10 @@ pd.set_option('display.width', 0)
 
 
 def read_train_and_val_data(long_format=True):
-    arguments_train_df = pd.read_csv('../../data/raw/touche23/arguments-training.tsv', sep='\t')
-    arguments_val_df = pd.read_csv('../../data/raw/touche23/arguments-validation.tsv', sep='\t')
-    level2_labels_train_df = pd.read_csv('../../data/raw/touche23/labels-training.tsv', sep='\t')
-    level2_labels_val_df = pd.read_csv('../../data/raw/touche23/labels-validation.tsv', sep='\t')
+    arguments_train_df = pd.read_csv('../data/raw/touche23/arguments-training.tsv', sep='\t')
+    arguments_val_df = pd.read_csv('../data/raw/touche23/arguments-validation.tsv', sep='\t')
+    level2_labels_train_df = pd.read_csv('../data/raw/touche23/labels-training.tsv', sep='\t')
+    level2_labels_val_df = pd.read_csv('../data/raw/touche23/labels-validation.tsv', sep='\t')
 
     if long_format:
         level2_values = list(level2_labels_train_df.columns)[1:]
@@ -28,12 +28,12 @@ def read_train_and_val_data(long_format=True):
 
 def read_test_data(which="test", long_format=True):
     if which == "test":
-        arguments_test_df = pd.read_csv('../../data/raw/touche23/arguments-test.tsv', sep='\t')
+        arguments_test_df = pd.read_csv('../data/raw/touche23/arguments-test.tsv', sep='\t')
     if which == "nahjalbalagha":
-        arguments_test_df = pd.read_csv('../../data/raw/touche23/arguments-test-nahjalbalagha.tsv',
+        arguments_test_df = pd.read_csv('../data/raw/touche23/arguments-test-nahjalbalagha.tsv',
                                         sep='\t')
 
-    level2_values = pd.read_csv('../../data/raw/touche23/labels-validation.tsv', sep='\t').columns[1:]
+    level2_values = pd.read_csv('../data/raw/touche23/labels-validation.tsv', sep='\t').columns[1:]
     level2_labels_test_df = arguments_test_df[["Argument ID"]]
     for value in level2_values:
         level2_labels_test_df[value] = 0
@@ -50,7 +50,7 @@ def convert_data_to_nli_format(arguments, labels, definition, paraphrases="no"):
     arguments = arguments[["Argument ID", "Premise"]]
 
     if paraphrases == "yes":
-        paraphrases_df = pd.read_csv('../../data/raw/paraphrases.tsv', sep='\t')
+        paraphrases_df = pd.read_csv('../data/raw/paraphrases.tsv', sep='\t')
         arguments = pd.concat([arguments, paraphrases_df])
 
     df = pd.merge(arguments, labels, how="left", on="Argument ID")
@@ -60,18 +60,18 @@ def convert_data_to_nli_format(arguments, labels, definition, paraphrases="no"):
         return df
 
     if definition == "description":
-        definition_df = pd.read_csv('../../data/raw/SemEval_ValueDescription.tsv', sep='\t')
+        definition_df = pd.read_csv('../data/raw/SemEval_ValueDescription.tsv', sep='\t')
         definition_df = definition_df[["Level2_Value", "Hypothesis"]]
 
     if definition == "survey":
-        definition_df = pd.read_csv('../../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
+        definition_df = pd.read_csv('../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
         definition_df = definition_df[["Level2_Value", "Hypothesis"]]
 
     if definition == "both":
-        definition_df1 = pd.read_csv('../../data/raw/SemEval_ValueDescription.tsv', sep='\t')
+        definition_df1 = pd.read_csv('../data/raw/SemEval_ValueDescription.tsv', sep='\t')
         definition_df1 = definition_df1[["Level2_Value", "Hypothesis"]]
 
-        definition_df2 = pd.read_csv('../../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
+        definition_df2 = pd.read_csv('../data/raw/SemEval_QuestionnaireItems.tsv', sep='\t')
         definition_df2 = definition_df2[["Level2_Value", "Hypothesis"]]
 
         definition_df = pd.concat([definition_df1, definition_df2])
@@ -170,7 +170,7 @@ def t5_vamsi_paraphraser(arguments_df, argument_ids): #do this only for the trai
 
     paraphrases_df = pd.DataFrame({"Argument ID": np.repeat(argument_ids, 3),
                                    "Premise": paraphrase_ls})
-    paraphrases_df.to_csv('../../data/raw/paraphrases.tsv', sep='\t', index=False)
+    paraphrases_df.to_csv('../data/raw/paraphrases.tsv', sep='\t', index=False)
 
 # def t5_paraphraser(arguments_df, argument_ids): #do this only for the train set
 #     # values for which to be paraphrased: Stimulation, Hedonism, Power: dominance, Face, Conformity: interpersonal, Humility
