@@ -1,0 +1,295 @@
+Level2_Value	Level1_Value	Example	Hypothesis	Level
+Self-direction: thought	Be creative	allowing for more creativity or imagination	It is important to have more creativity or imagination.	0
+Self-direction: thought	Be creative	being more creative	It is important to be more creative.	0
+Self-direction: thought	Be creative	fostering creativity	It is important to foster creativity.	0
+Self-direction: thought	Be creative	being innovative	It is important to be innovative.	0
+Self-direction: thought	Be creative	promoting imagination	It is important to promote imagination.	0
+Self-direction: thought	Be curious	being the more interesting option	It is important to be the more interesting option.	0
+Self-direction: thought	Be curious	fostering curiosity	It is important to foster curiosity.	0
+Self-direction: thought	Be curious	making people more keen to learn	It is important to make people more keen to learn.	0
+Self-direction: thought	Be curious	promoting discoveries	It is important to promote discoveries.	0
+Self-direction: thought	Be curious	sparking interest	It is important to spark interest.	0
+Self-direction: thought	Have freedom of thought	allowing people to figure things out on their own	It is important to figure things out on one's own.	0
+Self-direction: thought	Have freedom of thought	allowing people to make up their mind	It is important to make up one's own mind.	0
+Self-direction: thought	Have freedom of thought	resulting in less censorship	It is important to have less censorship.	0
+Self-direction: thought	Have freedom of thought	resulting in less influence on people's thoughts	It is important to have less influence on people's thoughts.	0
+Self-direction: action	Be choosing own goals	allowing people to choose what is best for them	It is important to choose what is best for oneself.	0
+Self-direction: action	Be choosing own goals	allowing people to decide on their life	It is important to decide on one's own life.	0
+Self-direction: action	Be choosing own goals	allowing people to follow their dreams	It is important to follow one's dreams.	0
+Self-direction: action	Be independent	allowing people to plan on their own	It is important to plan on one's own.	0
+Self-direction: action	Be independent	resulting in fewer times people have to ask for consent	It is important to have fewer times people have to ask for consent.	0
+Self-direction: action	Have freedom of action	allowing people to be self-determined	It is important to be self-determined.	0
+Self-direction: action	Have freedom of action	allowing people to do things even though this may hurt them in the long run	It is important to do things even though this may hurt oneself in the long run.	0
+Self-direction: action	Have freedom of action	resulting in more times people can do what they want	It is important to have more times people can do what they want.	0
+Self-direction: action	Have privacy	allowing for private spaces	It is important to have private spaces.	0
+Self-direction: action	Have privacy	allowing for time alone	It is important to have time alone.	0
+Self-direction: action	Have privacy	resulting in less surveillance	It is important to have less surveillance.	0
+Self-direction: action	Have privacy	resulting in more control on what to disclose and to whom	It is important to have more control on what to disclose and to whom.	0
+Stimulation	Have an exciting life	allowing people to experience foreign places	It is important to experience foreign places.	0
+Stimulation	Have an exciting life	providing perspective-changing experiences	It is important to have perspective-changing experiences.	0
+Stimulation	Have an exciting life	providing special activities	It is important to have special activities.	0
+Stimulation	Have a varied life	allowing people to change parts of their life	It is important to allow people to change parts of their life.	0
+Stimulation	Have a varied life	allowing people to move flat easily	It is important to allow people to move flat easily.	0
+Stimulation	Have a varied life	promoting local clubs (sports, ...)	It is important to promote local clubs (sports, ...).	0
+Stimulation	Have a varied life	providing many activities	It is important to have many activities.	0
+Stimulation	Be daring	allowing for risky actions	It is important to have risky actions.	0
+Stimulation	Be daring	allowing to take risks	It is important to take risks.	0
+Stimulation	Be daring	being more risky	It is important to be more risky.	0
+Stimulation	Be daring	fostering risk-taking	It is important to foster risk-taking.	0
+Hedonism	Have pleasure	making life enjoyable	It is important to make life enjoyable.	0
+Hedonism	Have pleasure	providing leisure	It is important to have leisure.	0
+Hedonism	Have pleasure	providing opportunities to have fun	It is important to have opportunities to have fun.	0
+Hedonism	Have pleasure	providing sensuous gratification	It is important to have sensuous gratification.	0
+Achievement	Be ambitious	allowing for ambitions	It is important to have ambitions.	0
+Achievement	Be ambitious	being more ambitious	It is important to be more ambitious.	0
+Achievement	Be ambitious	fostering ambition	It is important to foster ambition.	0
+Achievement	Be ambitious	providing incentives for the difficult climb up the social ladder	It is important to provide incentives for the difficult climb up the social ladder.	0
+Achievement	Have success	allowing for success	It is important to allow for success.	0
+Achievement	Have success	being more successful	It is important to be more successful.	0
+Achievement	Have success	recognizing achievements	It is important to recognize achievements.	0
+Achievement	Be capable	allowing to acquire competence in certain tasks	It is important to acquire competence in certain tasks.	0
+Achievement	Be capable	being more effective	It is important to be more effective.	0
+Achievement	Be capable	resulting in a higher effectivity	It is important to have a higher effectivity.	0
+Achievement	Be capable	showing competence in solving tasks	It is important to show competence in solving tasks.	0
+Achievement	Be intellectual	allowing to acquire high cognitive skills	It is important to acquire high cognitive skills.	0
+Achievement	Be intellectual	being more reflective	It is important to be more reflective.	0
+Achievement	Be intellectual	resulting in more reflective behavior	It is important to have more reflective behavior.	0
+Achievement	Be intellectual	showing intelligence	It is important to show intelligence.	0
+Achievement	Be courageous	being more courageous	It is important to be more courageous.	0
+Achievement	Be courageous	fostering courage	It is important to foster courage.	0
+Achievement	Be courageous	making people stand up for their beliefs	It is important to stand up for one's beliefs.	0
+Achievement	Be courageous	promoting courage	It is important to promote courage.	0
+Achievement	Be courageous	showing courage	It is important to show courage.	0
+Power: dominance	Have influence	having more people to ask for a favor	It is important to have more people to ask for a favor.	0
+Power: dominance	Have influence	resulting in more influence	It is important to have more influence.	0
+Power: dominance	Have influence	resulting in more obligations towards the own side	It is important to have more obligations towards the own side.	0
+Power: dominance	Have influence	resulting in more ways to control events	It is important to have more ways to control events.	0
+Power: dominance	Have the right to command	allowing experts to tell others what to do	It is important to have experts tell others what to do.	0
+Power: dominance	Have the right to command	allowing people to take command	It is important to take command.	0
+Power: dominance	Have the right to command	fostering leadership	It is important to fostering leadership.	0
+Power: dominance	Have the right to command	resulting in clearer hierarchies of command	It is important to have clearer hierarchies of command.	0
+Power: resources	Have wealth	allowing people to gain wealth	It is important to gain wealth.	0
+Power: resources	Have wealth	allowing to show one's wealth	It is important to show one's wealth.	0
+Power: resources	Have wealth	allowing to use money for power	It is important to use money for power.	0
+Power: resources	Have wealth	providing people with resources to control events	It is important to have resources to control events.	0
+Power: resources	Have wealth	resulting in financial prosperity	It is important to have financial prosperity.	0
+Face	Have social recognition	allowing people to gain respect	It is important to gain respect.	0
+Face	Have social recognition	avoiding humiliation	It is important to avoid humiliation.	0
+Face	Have social recognition	providing social recognition for actions	It is important to have social recognition for actions.	0
+Face	Have a good reputation	allowing people to build up their reputation	It is important to build up one's own reputation.	0
+Face	Have a good reputation	protecting one's public image	It is important to protect one's public image.	0
+Face	Have a good reputation	spreading reputation	It is important to spread reputation.	0
+Security: personal	Have a sense of belonging	allowing people to establish groups	It is important to allow people to establish groups.	0
+Security: personal	Have a sense of belonging	allowing people to join groups and show their group membership	It is important to join groups and show one's group membership.	0
+Security: personal	Have a sense of belonging	allowing group members to show they care for each other	It is important to show care for each other among group members.	0
+Security: personal	Have a sense of belonging	fostering a sense of belonging	It is important to foster a sense of belonging.	0
+Security: personal	Have a sense of belonging	resulting in fewer people forced to leave their groups	It is important to have fewer people forced to leave their groups.	0
+Security: personal	Have good health	avoiding diseases	It is important to avoid diseases.	0
+Security: personal	Have good health	preserving health	It is important to preserve health.	0
+Security: personal	Have good health	being alive	It is important to be alive.	0
+Security: personal	Have good health	having physiological and mental well-being	It is important to have physiological and mental well-being.	0
+Security: personal	Have good health	fostering activities to stay healthy	It is important to foster activities to stay healthy.	0
+Security: personal	Have good health	resulting in increased health	It is important to have increased health.	0
+Security: personal	Have no debts	avoiding indebtedness	It is important to avoid indebtedness.	0
+Security: personal	Have no debts	having people always return a favor	It is important to always return a favor.	0
+Security: personal	Have no debts	reciprocating favors	It is important to reciprocate favors.	0
+Security: personal	Be neat and tidy	allowing to clean up	It is important to clean up.	0
+Security: personal	Be neat and tidy	being more clean or orderly	It is important to be more clean or orderly.	0
+Security: personal	Be neat and tidy	promoting cleanliness or neatness	It is important to promote cleanliness or neatness.	0
+Security: personal	Be neat and tidy	resulting in higher cleanliness	It is important to have higher cleanliness.	0
+Security: personal	Have a comfortable life	providing subsistence income	It is important to provide subsistence income.	0
+Security: personal	Have a comfortable life	resulting in having no financial worries	It is important to have no financial worries.	0
+Security: personal	Have a comfortable life	resulting in a higher general happiness	It is important to have a higher general happiness.	0
+Security: personal	Have a comfortable life	resulting in a prosperous life	It is important to have a prosperous life.	0
+Security: societal	Have a safe country	caring for citizens	It is important to care for citizens.	0
+Security: societal	Have a safe country	resulting in a state that can better act on crimes	It is important to have a state that can better act on crimes.	0
+Security: societal	Have a safe country	resulting in a state that can better defend its citizens	It is important to have a state that can better defend its citizens.	0
+Security: societal	Have a safe country	resulting in a state that takes better care of its citizens	It is important to have a state that takes better care of its citizens.	0
+Security: societal	Have a safe country	resulting in a stronger state	It is important to have a stronger state.	0
+Security: societal	Have a stable society	accepting or maintaining the existing social structure	It is important to accept or maintain the existing social structure.	0
+Security: societal	Have a stable society	preventing chaos and disorder	It is important to prevent chaos and disorder.	0
+Security: societal	Have a stable society	promoting the social order	It is important to promote the social order.	0
+Security: societal	Have a stable society	resulting in a country that is more stable	It is important to have a country that is more stable.	0
+Tradition	Be respecting traditions	allowing to follow one's family's customs	It is important to follow one's family's customs.	0
+Tradition	Be respecting traditions	honoring traditional practices	It is important to honor traditional practices.	0
+Tradition	Be respecting traditions	maintaining traditional values and ways of thinking	It is important to maintain traditional values and ways of thinking.	0
+Tradition	Be respecting traditions	promoting the preservation of customs	It is important to promote the preservation of customs.	0
+Tradition	Be holding religious faith	allowing to devote one's life to their faith	It is important to devote one's life to their faith.	0
+Tradition	Be holding religious faith	allowing the customs of a religion	It is important to allow the customs of a religion.	0
+Tradition	Be holding religious faith	being more adequate for a certain religion	It is important to be more adequate for a certain religion.	0
+Tradition	Be holding religious faith	promoting piety	It is important to promote piety.	0
+Tradition	Be holding religious faith	spreading a religion	It is important to spread a religion.	0
+Conformity: rules	Be compliant	abiding to laws or rules	It is important to abide to laws or rules.	0
+Conformity: rules	Be compliant	promoting to meet one's obligations	It is important to meet one's obligations.	0
+Conformity: rules	Be compliant	recognizing people who abide to laws or rules	It is important to recognize people who abide to laws or rules.	0
+Conformity: rules	Be self-disciplined	fostering to exercise restraint	It is important to exercise restraint.	0
+Conformity: rules	Be self-disciplined	fostering to follow rules even when no-one is watching	It is important to follow rules even when no-one is watching.	0
+Conformity: rules	Be self-disciplined	fostering to set rules for oneself	It is important to set rules for oneself.	0
+Conformity: rules	Be behaving properly	avoiding to violate informal rules or social conventions	It is important to avoid violating informal rules or social conventions.	0
+Conformity: rules	Be behaving properly	fostering good manners	It is important to foster good manners.	0
+Conformity: rules	Be behaving properly	resulting in more people minding their manners	It is important to mind one's manners.	0
+Conformity: interpersonal	Be polite	avoiding to upset other people	It is important to avoid upsetting other people.	0
+Conformity: interpersonal	Be polite	promoting to take others into account	It is important to take others into account.	0
+Conformity: interpersonal	Be polite	resulting in being less annoying for others	It is important to be less annoying for others.	0
+Conformity: interpersonal	Be honoring elders	fostering that children follow their parents	It is important to foster that children follow their parents.	0
+Conformity: interpersonal	Be honoring elders	showing faith and respect towards one's elders	It is important to show faith and respect towards one's elders.	0
+Humility	Be humble	demoting arrogance	It is important to demote arrogance.	0
+Humility	Be humble	demoting to think one deserves more than other people	It is important to not think one deserves more than other people.	0
+Humility	Be humble	emphasizing the successful group over single persons	It is important to emphasize the successful group over single persons.	0
+Humility	Be humble	fostering to give back to society for the opportunities one got	It is important to give back to society for the opportunities one got.	0
+Humility	Be humble	fostering to not brag about what one achieved	It is important to not brag about what one achieved.	0
+Humility	Have life accepted as is	allowing people to accept their fate	It is important to accept one's own fate.	0
+Humility	Have life accepted as is	fostering to submit to life's circumstances	It is important to submit to life's circumstances.	0
+Humility	Have life accepted as is	promoting satisfaction with what one has	It is important to have satisfaction with what one has.	0
+Humility	Have life accepted as is	showing acceptance of one's own portion in life	It is important to show acceptance of one's own portion in life.	0
+Benevolence: caring	Be helpful	allowing to help the people in one's group	It is important to help the people in one's group.	0
+Benevolence: caring	Be helpful	being more helpful to those one cares for	It is important to be more helpful to those one cares for.	0
+Benevolence: caring	Be helpful	fostering a readiness to help each other	It is important to foster a readiness to help each other.	0
+Benevolence: caring	Be helpful	promoting to work for the welfare of others in one group	It is important to work for the welfare of others in one group.	0
+Benevolence: caring	Be honest	being more honest	It is important to be more honest.	0
+Benevolence: caring	Be honest	fostering honest ways of thinking	It is important to foster honest ways of thinking.	0
+Benevolence: caring	Be honest	promoting honesty	It is important to promote honesty.	0
+Benevolence: caring	Be honest	recognizing people for their honesty	It is important to recognize people for their honesty.	0
+Benevolence: caring	Be honest	resulting in more honest social interaction	It is important to have more honest social interaction.	0
+Benevolence: caring	Be forgiving	allowing people to forgive each other	It is important to forgive each other.	0
+Benevolence: caring	Be forgiving	giving people a second chance	It is important to give people a second chance.	0
+Benevolence: caring	Be forgiving	being merciful	It is important to be merciful.	0
+Benevolence: caring	Be forgiving	promoting a will to pardon others	It is important to promote a will to pardon others.	0
+Benevolence: caring	Be forgiving	providing paths to redemption	It is important to provide paths to redemption.	0
+Benevolence: caring	Have the own family secured	allowing people to protect their family	It is important to protect own family.	0
+Benevolence: caring	Have the own family secured	promoting to have a family	It is important to have a family.	0
+Benevolence: caring	Have the own family secured	providing care for one's family	It is important to providecare for one's family.	0
+Benevolence: caring	Be loving	allowing to place the well-being of others above the own well-being	It is important to place the well-being of others above the own well-being.	0
+Benevolence: caring	Be loving	allowing to show one's affection, compassion and sympathy	It is important to show one's affection, compassion and sympathy.	0
+Benevolence: caring	Be loving	fostering close relationships	It is important to foster close relationships.	0
+Benevolence: caring	Be loving	promoting self-respect and self-love as a means of care for oneself	It is important to promote self-respect and self-love as a means of care for oneself.	0
+Benevolence: caring	Be loving	promoting to concern oneself with the needs of dear ones	It is important to concern oneself with the needs of dear ones.	0
+Benevolence: dependability	Be responsible	allowing for clear responsibilities	It is important to have clear responsibilities.	0
+Benevolence: dependability	Be responsible	fostering dependability	It is important to foster dependability.	0
+Benevolence: dependability	Be responsible	promoting reliability	It is important to have reliability.	0
+Benevolence: dependability	Be responsible	resulting in more people being confident	It is important to be confident.	0
+Benevolence: dependability	Be responsible	taking responsibility	It is important to take responsibility.	0
+Benevolence: dependability	Have loyalty towards friends	being a dependable and trustworthy friend	It is important to be a dependable and trustworthy friend.	0
+Benevolence: dependability	Have loyalty towards friends	foster loyalty towards friends	It is important to have loyalty towards friends.	0
+Benevolence: dependability	Have loyalty towards friends	promoting to give friends a full backing	It is important to give friends a full backing.	0
+Universalism: concern	Have equality	fostering people of a lower social status	It is important to foster people of a lower social status.	0
+Universalism: concern	Have equality	helping poorer regions of the world	It is important to help poorer regions of the world.	0
+Universalism: concern	Have equality	providing all people with equal opportunities in life	It is important to provide all people with equal opportunities in life.	0
+Universalism: concern	Have equality	resulting in a world were success is less determined by birth	It is important to have a world where success is less determined by birth.	0
+Universalism: concern	Be just	allowing justice to be 'blind' to irrelevant aspects of a case	It is important to have justice be 'blind' to irrelevant aspects of a case.	0
+Universalism: concern	Be just	fostering a sense for justice	It is important to foster a sense for justice.	0
+Universalism: concern	Be just	promoting fairness in competitions	It is important to promote fairness in competitions.	0
+Universalism: concern	Be just	protecting the weak and vulnerable in society	It is important to protect the weak and vulnerable in society.	0
+Universalism: concern	Be just	resulting a world were people are less discriminated based on race, gender, ...	It is important to have a world where people are less discriminated based on race, gender, etc.	0
+Universalism: concern	Have a world at peace	allowing for nations to cease fire	It is important to have nations cease fire.	0
+Universalism: concern	Have a world at peace	avoiding conflicts	It is important to avoid conflicts.	0
+Universalism: concern	Have a world at peace	fostering to see peace as fragile and precious	It is important to see peace as fragile and precious.	0
+Universalism: concern	Have a world at peace	promoting to end wars	It is important to end wars.	0
+Universalism: concern	Have a world at peace	resulting in more people caring for all of humanity	It is important to care for all of humanity.	0
+Universalism: nature	Be protecting the environment	avoiding pollution	It is important to avoid pollution.	0
+Universalism: nature	Be protecting the environment	fostering to care for nature	It is important to care for nature.	0
+Universalism: nature	Be protecting the environment	promoting programs to restore nature	It is important to promote programs to restore nature.	0
+Universalism: nature	Be protecting the environment	resulting in less damage to the ecosystem	It is important to have less damage to the ecosystem.	0
+Universalism: nature	Have harmony with nature	allowing to avoid chemicals (especially in nutrition)	It is important to avoid chemicals (especially in nutrition).	0
+Universalism: nature	Have harmony with nature	allowing to avoid genetically modified organisms	It is important to avoid genetically modified organisms.	0
+Universalism: nature	Have harmony with nature	fostering to treat animals or plants like them having souls	It is important to treat animals or plants like them having souls.	0
+Universalism: nature	Have harmony with nature	promoting a life in harmony with nature	It is important to promote a life in harmony with nature.	0
+Universalism: nature	Have harmony with nature	resulting in more people reflecting the consequences of their actions towards the environment	It is important to reflect the consequences of their actions towards the environment.	0
+Universalism: nature	Have a world of beauty	allowing people to experience art	It is important to experience art.	0
+Universalism: nature	Have a world of beauty	fostering to stand in awe of nature	It is important to stand in awe of nature.	0
+Universalism: nature	Have a world of beauty	promoting fine arts	It is important to promote fine arts.	0
+Universalism: nature	Have a world of beauty	promoting the beauty of nature	It is important to promote the beauty of nature.	0
+Universalism: nature	Have a world of beauty	spreading beauty	It is important to spread beauty.	0
+Universalism: tolerance	Be broadminded	allowing for discussion between groups	It is important to have discussion between groups.	0
+Universalism: tolerance	Be broadminded	clearing up with prejudices	It is important to clear up with prejudices.	0
+Universalism: tolerance	Be broadminded	fostering to listen to and understand people who are different from oneself	It is important to listen to and understand people who are different from oneself.	0
+Universalism: tolerance	Be broadminded	promoting tolerance towards all kinds of people and groups	It is important to have tolerance towards all kinds of people and groups.	0
+Universalism: tolerance	Be broadminded	promoting to life within a different group for some time	It is important to live within a different group for some time.	0
+Universalism: tolerance	Have the wisdom to accept others	allowing people to accept disagreements	It is important to accept disagreements.	0
+Universalism: tolerance	Have the wisdom to accept others	fostering to accept people even when one disagrees with them	It is important to accept people even when one disagrees with them.	0
+Universalism: tolerance	Have the wisdom to accept others	promoting a mature understanding of different opinions	It is important to promote a mature understanding of different opinions.	0
+Universalism: tolerance	Have the wisdom to accept others	resulting in fewer partisans or fanatics	It is important to have fewer partisans or fanatics.	0
+Universalism: objectivity	Be logical	being better by the numbers but not by gut feeling	It is important to be better by the numbers but not by gut feeling.	0
+Universalism: objectivity	Be logical	fostering a rational way of thinking	It is important to foster a rational way of thinking.	0
+Universalism: objectivity	Be logical	promoting focus and consistency	It is important to promote focus and consistency.	0
+Universalism: objectivity	Be logical	promoting the rational analysis of circumstances	It is important to promote the rational analysis of circumstances.	0
+Universalism: objectivity	Be logical	promoting the scientific method	It is important to promote the scientific method.	0
+Universalism: objectivity	Have an objective view	fostering to seek the truth	It is important to seek the truth.	0
+Universalism: objectivity	Have an objective view	fostering to take on a neutral perspective	It is important to take on a neutral perspective.	0
+Universalism: objectivity	Have an objective view	promoting to form an unbiased opinion	It is important to form an unbiased opinion.	0
+Universalism: objectivity	Have an objective view	providing people with the means to make informed decisions	It is important to provide people with the means to make informed decisions.	0
+Universalism: objectivity	Have an objective view	weighing all pros and cons	It is important to weigh all pros and cons.	0
+Self-direction: thought	Be creative	NA	It is important to be creative.	1
+Self-direction: thought	Be curious	NA	It is important to be curious.	1
+Self-direction: thought	Have freedom of thought	NA	It is important to have freedom of thought.	1
+Self-direction: action	Be choosing own goals	NA	It is important to be choosing own goals.	1
+Self-direction: action	Be independent	NA	It is important to be independent.	1
+Self-direction: action	Have freedom of action	NA	It is important to have freedom of action.	1
+Self-direction: action	Have privacy	NA	It is important to have privacy.	1
+Stimulation	Have an exciting life	NA	It is important to have an exciting life.	1
+Stimulation	Have a varied life	NA	It is important to have a varied life.	1
+Stimulation	Be daring	NA	It is important to be daring.	1
+Hedonism	Have pleasure	NA	It is important to have pleasure.	1
+Achievement	Be ambitious	NA	It is important to be ambitious.	1
+Achievement	Have success	NA	It is important to have success.	1
+Achievement	Be capable	NA	It is important to be capable.	1
+Achievement	Be intellectual	NA	It is important to be intellectual.	1
+Achievement	Be courageous	NA	It is important to be courageous.	1
+Power: dominance	Have influence	NA	It is important to have influence.	1
+Power: dominance	Have the right to command	NA	It is important to have the right to command.	1
+Power: resources	Have wealth	NA	It is important to have wealth.	1
+Face	Have social recognition	NA	It is important to have social recognition.	1
+Face	Have a good reputation	NA	It is important to have a good reputation.	1
+Security: personal	Have a sense of belonging	NA	It is important to have a sense of belonging.	1
+Security: personal	Have good health	NA	It is important to have good health.	1
+Security: personal	Have no debts	NA	It is important to have no debts.	1
+Security: personal	Be neat and tidy	NA	It is important to be neat and tidy.	1
+Security: personal	Have a comfortable life	NA	It is important to have a comfortable life.	1
+Security: societal	Have a safe country	NA	It is important to have a safe country.	1
+Security: societal	Have a stable society	NA	It is important to have a stable society.	1
+Tradition	Be respecting traditions	NA	It is important to be respecting traditions.	1
+Tradition	Be holding religious faith	NA	It is important to be holding religious faith.	1
+Conformity: rules	Be compliant	NA	It is important to be compliant.	1
+Conformity: rules	Be self-disciplined	NA	It is important to be self-disciplined.	1
+Conformity: rules	Be behaving properly	NA	It is important to be behaving properly.	1
+Conformity: interpersonal	Be polite	NA	It is important to be polite.	1
+Conformity: interpersonal	Be honoring elders	NA	It is important to be honoring elders.	1
+Humility	Be humble	NA	It is important to be humble.	1
+Humility	Have life accepted as is	NA	It is important to have life accepted as is.	1
+Benevolence: caring	Be helpful	NA	It is important to be helpful.	1
+Benevolence: caring	Be honest	NA	It is important to be honest.	1
+Benevolence: caring	Be forgiving	NA	It is important to be forgiving.	1
+Benevolence: caring	Have the own family secured	NA	It is important to have the own family secured.	1
+Benevolence: caring	Be loving	NA	It is important to be loving.	1
+Benevolence: dependability	Be responsible	NA	It is important to be responsible.	1
+Benevolence: dependability	Have loyalty towards friends	NA	It is important to have loyalty towards friends.	1
+Universalism: concern	Have equality	NA	It is important to have equality.	1
+Universalism: concern	Be just	NA	It is important to be just.	1
+Universalism: concern	Have a world at peace	NA	It is important to have a world at peace.	1
+Universalism: nature	Be protecting the environment	NA	It is important to be protecting the environment.	1
+Universalism: nature	Have harmony with nature	NA	It is important to have harmony with nature.	1
+Universalism: nature	Have a world of beauty	NA	It is important to have a world of beauty.	1
+Universalism: tolerance	Be broadminded	NA	It is important to be broadminded.	1
+Universalism: tolerance	Have the wisdom to accept others	NA	It is important to have the wisdom to accept others.	1
+Universalism: objectivity	Be logical	NA	It is important to be logical.	1
+Universalism: objectivity	Have an objective view	NA	It is important to have an objective view.	1
+Self-direction: thought	NA	It is good to have own ideas and interests.	It is important to have own ideas and interests.	2
+Self-direction: action	NA	It is good to determine one's own actions.	It is important to determine one's own actions.	2
+Stimulation	NA	It is good to experience excitement, novelty, and change.	It is important to experience excitement, novelty, and change.	2
+Hedonism	NA	It is good to experience pleasure and sensual gratification.	It is important to experience pleasure and sensual gratification.	2
+Achievement	NA	It is good to be successful in accordance with social norms.	It is important to be successful in accordance with social norms.	2
+Power: dominance	NA	It is good to be in positions of control over others.	It is important to be in positions of control over others.	2
+Power: resources	NA	It is good to have material possessions and social resources.	It is important to have material possessions and social resources.	2
+Face	NA	It is good to maintain one's public image.	It is important to maintain one's public image.	2
+Security: personal	NA	It is good to have a secure immediate environment.	It is important to have a secure immediate environment.	2
+Security: societal	NA	It is good to have a secure and stable wider society.	It is important to have a secure and stable wider society.	2
+Tradition	NA	It is good to maintain cultural, family, or religious traditions.	It is important to maintain cultural, family, or religious traditions.	2
+Conformity: rules	NA	It is good to comply with rules, laws, and formal obligations.	It is important to comply with rules, laws, and formal obligations.	2
+Conformity: interpersonal	NA	It is good to avoid upsetting or harming others.	It is important to avoid upsetting or harming others.	2
+Humility	NA	It is good to recognize one's own insignificance in the larger scheme of things.	It is important to recognize one's own insignificance in the larger scheme of things.	2
+Benevolence: caring	NA	It is good to work for the welfare of one's group's members.	It is important to work for the welfare of one's group's members.	2
+Benevolence: dependability	NA	It is good to be a reliable and trustworthy member of one's group.	It is important to be a reliable and trustworthy member of one's group.	2
+Universalism: concern	NA	It is good to strive for equality, justice, and protection for all people.	It is important to strive for equality, justice, and protection for all people.	2
+Universalism: nature	NA	It is good to preserve the natural environment.	It is important to preserve the natural environment.	2
+Universalism: tolerance	NA	It is good to accept and try to understand those who are different from oneself.	It is important to accept and try to understand those who are different from oneself.	2
+Universalism: objectivity	NA	It is good to search for the truth and think in a rational and unbiased way.	It is important to search for the truth and think in a rational and unbiased way.	2
